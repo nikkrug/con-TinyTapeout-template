@@ -16,10 +16,8 @@ module lfsr (
 		lfsr_state_o = lfsr_p;
 	end
 	always @(posedge clk_i or posedge reset_i)
-		if (reset_i) begin
+		if (reset_i)
 			lfsr_p <= 32'd12403652;
-			lfsr_state_o <= lfsr_p;
-		end
 		else
 			lfsr_p <= lfsr_n;
 	initial _sv2v_0 = 0;
